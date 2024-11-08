@@ -16,7 +16,7 @@ public class Personaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPersonaje;
-    @Column(length = 75, nullable = false, unique = true)
+    @Column(length = 50, nullable = false, unique = true)
     private String nombre;
     @Column(nullable = false)
     private Raza raza;
