@@ -13,6 +13,7 @@ public class Personaje {
     private Long idPersonaje;
     private String nombre;
     private Enum raza;
+    private Enum alianza;
 
 
     
