@@ -1,5 +1,7 @@
 package edu.daniel.lordoftheringsbd.entities;
 
+import edu.daniel.lordoftheringsbd.entities.enumerated.Alianza;
+import edu.daniel.lordoftheringsbd.entities.enumerated.Raza;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,8 +14,8 @@ public class Personaje {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPersonaje;
     private String nombre;
-    private Enum raza;
-    private Enum alianza;
+    private Raza raza;
+    private Alianza alianza;
 
 
     
