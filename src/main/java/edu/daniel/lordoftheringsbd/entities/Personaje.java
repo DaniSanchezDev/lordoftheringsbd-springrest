@@ -4,6 +4,8 @@ import edu.daniel.lordoftheringsbd.entities.enumerated.Alianza;
 import edu.daniel.lordoftheringsbd.entities.enumerated.Raza;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,9 +20,11 @@ public class Personaje {
     private Long idPersonaje;
     @Column(length = 50, nullable = false, unique = true)
     private String nombre;
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "Enum('HUMANO', 'MAIA', 'HOBBIT', 'ELFO', 'ORCO')")
+    @Enumerated(EnumType.STRING)
     private Raza raza;
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "Enum('LA_COMUNIDAD', 'MORDOR', 'ISENGARD', 'AVENTURERO')")
+    @Enumerated(EnumType.STRING)
     private Alianza alianza;
 
 
@@ -32,6 +36,12 @@ public class Personaje {
     
     public Personaje(Long idPersonaje, String nombre, Raza raza, Alianza alianza) {
         this.idPersonaje = idPersonaje;
+        this.nombre = nombre;
+        this.raza = raza;
+        this.alianza = alianza;
+    }
+
+    public Personaje(String nombre, Raza raza, Alianza alianza) {
         this.nombre = nombre;
         this.raza = raza;
         this.alianza = alianza;
