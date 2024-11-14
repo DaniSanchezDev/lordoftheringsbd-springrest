@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController // se indica que esto es un controlador
-@RequestMapping("/posesiones")
+@RequestMapping("/posesiones") //ponemos la ruta que va a salir en el navegador
 public class PosesionController {
     @Autowired
     PosesionService posesionServ;
