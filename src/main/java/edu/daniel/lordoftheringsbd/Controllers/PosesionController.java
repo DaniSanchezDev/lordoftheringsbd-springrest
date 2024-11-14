@@ -10,6 +10,8 @@ import edu.daniel.lordoftheringsbd.Services.PosesionService;
 import edu.daniel.lordoftheringsbd.entities.Posesion;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 @RestController // se indica que esto es un controlador
@@ -21,5 +23,11 @@ public class PosesionController {
     public List<Posesion> getPosesiones() {
         return posesionServ.buscarTodos();
     }
+// Metodo para buscar por id variable
+    @GetMapping("/{id}")
+    public Posesion getPosesionById(@PathVariable("id") Integer id) {
+       return posesionServ.findById(id);
+    }
+    
     
 }
