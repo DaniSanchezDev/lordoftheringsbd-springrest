@@ -26,6 +26,7 @@ public class Personaje {
     @Column(nullable = false, columnDefinition = "Enum('LA_COMUNIDAD', 'MORDOR', 'ISENGARD', 'AVENTURERO')")
     @Enumerated(EnumType.STRING)
     private Alianza alianza;
+    
 
 
     
