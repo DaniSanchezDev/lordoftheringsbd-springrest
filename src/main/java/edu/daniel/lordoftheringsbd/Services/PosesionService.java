@@ -34,6 +34,7 @@ public class PosesionService implements IPosesionService {
         Optional<Posesion> op = posesionRepo.findById(id);
         if (op.isPresent()) {
             posesionRepo.delete(op.get());
+            System.out.println("Posesión " + op.get()+ " borrada correctamente");
         } else {
            System.out.println("Posesion no encontrada");
         }
@@ -43,11 +44,5 @@ public class PosesionService implements IPosesionService {
     public Posesion guardarPosesion(Posesion pos) {
        return posesionRepo.save(pos);
     }
-
-    
-
-
-    
-    
 
 }

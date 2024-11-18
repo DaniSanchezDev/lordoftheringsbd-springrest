@@ -33,9 +33,8 @@ public class PosesionController {
     }
 
     @DeleteMapping("/{id}")
-    public String deletePosesionId(@PathVariable("id") Long idUrl) {
-        posesionServ.borrarPosesion(idUrl);
-        return "Posesión borrada";
+    public void deletePosesionId(@PathVariable("id") Long idUrl) {
+         posesionServ.borrarPosesion(idUrl);
     }
 
     @PostMapping("/guardar")
