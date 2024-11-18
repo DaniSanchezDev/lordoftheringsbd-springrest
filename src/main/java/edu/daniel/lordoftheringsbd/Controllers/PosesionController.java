@@ -12,6 +12,8 @@ import edu.daniel.lordoftheringsbd.entities.Posesion;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 
@@ -31,9 +33,14 @@ public class PosesionController {
     }
 
     @DeleteMapping("/{id}")
-    public String deletePosesionId(@PathVariable("id") Integer idUrl) {
+    public String deletePosesionId(@PathVariable("id") Long idUrl) {
         posesionServ.borrarPosesion(idUrl);
         return "Posesión borrada";
+    }
+
+    @PostMapping("/guardar")
+    public Posesion guardarPosesion(@RequestBody Posesion pos){
+        return posesionServ.guardarPosesion(pos);
     }
     
     

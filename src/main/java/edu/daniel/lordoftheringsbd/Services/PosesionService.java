@@ -29,6 +29,23 @@ public class PosesionService implements IPosesionService {
         } 
     }
 
+    @Override
+    public void borrarPosesion(Long id) {
+        Optional<Posesion> op = posesionRepo.deleteById((long)id);
+        if (op.isPresent()) {
+            return op.get()
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public Posesion guardarPosesion(Posesion pos) {
+       return posesionRepo.save(pos);
+    }
+
+    
+
 
     
     
