@@ -34,10 +34,8 @@ public class PosesionService implements IPosesionService {
         Optional<Posesion> op = posesionRepo.findById(id);
         if (op.isPresent()) {
             posesionRepo.delete(op.get());
-        } else if (op.isPresent()) {
-            
-        }{
-           
+        } else {
+           System.out.println("Posesion no encontrada");
         }
     }
 
