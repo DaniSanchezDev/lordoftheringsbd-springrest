@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import edu.daniel.lordoftheringsbd.Services.PosesionService;
 import edu.daniel.lordoftheringsbd.entities.Posesion;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -27,6 +28,12 @@ public class PosesionController {
     @GetMapping("/{id}")
     public Posesion getPosesionById(@PathVariable("id") Integer id) {
        return posesionServ.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deletePosesionId(@PathVariable("id") Integer idUrl) {
+        posesionServ.borrarPosesion(idUrl);
+        return "Posesión borrada";
     }
     
     
