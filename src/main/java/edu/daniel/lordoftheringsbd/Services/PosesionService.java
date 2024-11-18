@@ -31,11 +31,13 @@ public class PosesionService implements IPosesionService {
 
     @Override
     public void borrarPosesion(Long id) {
-        Optional<Posesion> op = posesionRepo.deleteById((long)id);
+        Optional<Posesion> op = posesionRepo.findById(id);
         if (op.isPresent()) {
-            return op.get()
-        } else {
-            return null;
+            posesionRepo.delete(op.get());
+        } else if (op.isPresent()) {
+            
+        }{
+           
         }
     }
 
