@@ -97,6 +97,7 @@ public class Posesion {
         return "Posesion [idPosesion=" + idPosesion + ", idPersonaje=" + idPersonaje + ", idArtefacto=" + idArtefacto
                 + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + "]";
     }
+
     
     
 
