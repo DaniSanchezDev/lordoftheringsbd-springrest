@@ -26,7 +26,7 @@ public class PosesionService implements IPosesionService {
             return optional.get();
         }else{
             return null;
-        } 
+        }
     }
 
     @Override
